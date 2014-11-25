@@ -31,6 +31,8 @@ if __name__=="__main__":
     #print string.join(map(str,list))
 
     print(time.clock() - startTime)
+    
+    shellSort(list)
 
     outFile.write(str(size[0]))
     outFile.write(",")
