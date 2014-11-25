@@ -3,12 +3,12 @@
      gap = len(list) // 2
      while gap > 0:
          for i in range(gap, len(list)):
-             val = list[i]
+             var = list[i]
              j = i
-             while j >= gap and list[j - gap] > val:
+             while j >= gap and list[j - gap] > var:
                  list[j] = list[j - gap]
                  j -= gap
-             list[j] = val
+             list[j] = var
          gap //= 2
 
 
