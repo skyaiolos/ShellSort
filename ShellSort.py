@@ -1,15 +1,17 @@
 
- def shellSort(list):
-     gap = len(list) // 2
-     while gap > 0:
-         for i in range(gap, len(list)):
-             var = list[i]
-             j = i
-             while j >= gap and list[j - gap] > var:
-                 list[j] = list[j - gap]
-                 j -= gap
-             list[j] = var
-         gap //= 2
+def shellSort(list):
+    gap = len(list) // 2
+    #gap = 1
+    while gap > 0:
+        for i in range(gap, len(list)):
+            var = list[i]
+            j = i
+            while j >= gap and list[j - gap] > var:
+                list[j] = list[j - gap]
+                j -= gap
+            list[j] = var
+        gap //= 2
+        #print gap
 
 
 if __name__=="__main__":                 
@@ -19,20 +21,22 @@ if __name__=="__main__":
     import random
 
     outFile = open("ShellTime.txt", "a+")
-
-    startTime = time.clock()
     
     size = map(int,sys.argv[1:])
+
+    #list = [5] * size[0]
     
     list = random.sample(range(9999999),size[0])
 
     #print string.join(map(str,list))
 
+    #shellSort(list)
+    
+    startTime = time.clock()
+    shellSort(list)
     #print string.join(map(str,list))
 
     print(time.clock() - startTime)
-    
-    shellSort(list)
 
     outFile.write(str(size[0]))
     outFile.write(",")
